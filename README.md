@@ -25,6 +25,8 @@ Or can be downloaded via bower.
 bower install global-storage
 ```
 
+---
+
 You can pass variables collected from backend to frontend via JSON
 
 ```javascript
