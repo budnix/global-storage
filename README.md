@@ -1,22 +1,25 @@
 global-storage
 ==============
 
-Simple JavaScript Object for manage global variables
+Simple JavaScript Object for global variables management
 
-GlobalStorage is a lightweight library (~1kb when minified) designed for simple managing variables
-passing from backend languages like PHP to JavaScript. You can set/get objects, arrays, numbers or other data
+GlobalStorage is a lightweight library (~1kb when minified) designed for simple variable management.
+It can be used by passing variables to JavaScript from backend languages like PHP.
+You can set/get objects, arrays, numbers or other data
 types, accessible via a Redis-like API.
+
+
 
 ## How to use GlobalStorage
 
 
-Download it manually from [here](https://raw2.github.com/budnix/global-storage/master/global-storage.js) and add it in your HTML.
+It can by downloaded manually from [here](https://raw2.github.com/budnix/global-storage/master/global-storage.js) and add then in your HTML.
 
 ```html
 <script src="/path/to/global-storage.js" type="text/javascript"></script>
 ```
 
-You can pass variables collected from backend to frontend via JSON:
+You can pass variables collected from backend to frontend via JSON
 
 ```javascript
 <script>
@@ -24,7 +27,7 @@ You can pass variables collected from backend to frontend via JSON:
 </script>
 ```
 
-and in different code of your JavaScript you have easily access to yours backend variables.
+and in other files of your app, you have easily access to your backend variables.
 
 *Example*
 ```javascript
@@ -56,12 +59,12 @@ GlobalStorage.set(key, value)
 
 *Example*
 ```javascript
-// Save as number
+// Saved as number
 GlobalStorage.set('book_id', 123);
-// Save as string
+// Saved as string
 GlobalStorage.set('book_title', 'JavaScript for dummies');
 // Saved as array
-GlobalStorage.set('books', [{title: 'JavaScript', iban: 12345}, {titile: 'Html5', iban: 56789}]);
+GlobalStorage.set('books', [{title: 'JavaScript', iban: 12345}, {title: 'Html5', iban: 56789}]);
 // Saved as object
 GlobalStorage.set('session', {user_id: 12, avatar: {min: 'http://...min.jpg', max: 'http://...max.jpg'}});
 ```
@@ -76,7 +79,7 @@ GlobalStorage.set('session', {user_id: 12, avatar: {min: 'http://...min.jpg', ma
 GlobalStorage.get(key, defaultValue)
 ```
 
-> Returns the saved value for given key, even if the saved value is a object. If value is null or undefined it returns a default value.
+> Returns the saved value for given key, even if the saved value is an object. If value is null or undefined it returns a default value.
 
 *Example*
 ```javascript
@@ -111,3 +114,14 @@ GlobalStorage.set('foo', 11):
 GlobalStorage.get('foo', 55):
 > 11
 ```
+
+
+## Running Tests
+
+To execute all unit tests, use:
+
+    grunt test
+
+## License
+
+   MIT
