@@ -19,6 +19,12 @@ It can by downloaded manually from [here](https://raw2.github.com/budnix/global-
 <script src="/path/to/global-storage.js" type="text/javascript"></script>
 ```
 
+Or can be downloaded via bower.
+
+```javascript
+bower install global-storage
+```
+
 You can pass variables collected from backend to frontend via JSON
 
 ```javascript
