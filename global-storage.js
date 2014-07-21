@@ -1,12 +1,17 @@
 
-(function(root) {
-    'use strict';
-
+(function (root, factory) {
+    if ( typeof define === 'function' && define.amd ) {
+        define(function() {
+            root.GlobalStorage = factory();
+        });
+    } else {
+        root.GlobalStorage = factory();
+    }
+}(this, function() {
     var data = {},
         _get, _set,
         extend,
-        isObject,
-        storage;
+        isObject;
 
     extend = function(base, object) {
         var i;
@@ -89,7 +94,7 @@
         }
     };
 
-    storage = {
+    return {
         get: function(key, defaultValue) {
             var value = _get(key.split('.'));
 
@@ -108,12 +113,4 @@
             return this;
         }
     };
-
-    if ( typeof define === 'function' && define.amd ) {
-        define(function() {
-            root.GlobalStorage = storage;
-        });
-    } else {
-        root.GlobalStorage = storage;
-    }
-}(this));
+}));
