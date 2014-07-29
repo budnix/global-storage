@@ -51,7 +51,9 @@ if ( GlobalStorage.get('session.is_logged') ) {
 }
 ...
 
+// <img id="some-img-id" src="" />
 $('some-img-id').attr('src', GlobalStorage.get('session.avatar.min', 'http://...default-avatar.jpg'));
+...
 
 ```
 
