@@ -31,7 +31,7 @@ You can pass variables collected from backend to frontend via JSON
 
 ```javascript
 <script>
-    GlobalStorage.fromJSON('{"user_id":123,"env":"dev","session":{"is_logged":true,"is_admin":false}}');
+    GlobalStorage.fromJSON('{"user_id":123,"env":"dev","session":{"is_logged":true,"is_admin":false,"avatar":{"min":"http://...jpg"}}}');
 </script>
 ```
 
@@ -50,6 +50,8 @@ if ( GlobalStorage.get('session.is_logged') ) {
    // code for logged user
 }
 ...
+
+$('some-img-id').attr('src', GlobalStorage.get('session.avatar.min', 'http://...default-avatar.jpg'));
 
 ```
 
